@@ -9,5 +9,5 @@ public interface CarService {
     List<Car> findAll();
     Car save(Car car);
     void deleteById(Long id);
-    List<Car> findByBrandAndGas(String brand, String gas);
+    List<Car> findByQuery(String brand, String gas, double maxPrice);
 }

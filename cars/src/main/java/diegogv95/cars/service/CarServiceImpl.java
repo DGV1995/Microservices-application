@@ -37,8 +37,8 @@ public class CarServiceImpl implements CarService {
         repository.deleteById(id);
     }
 
-    public List<Car> findByBrandAndGas(String brand, String gas) {
-        return repository.findByBrandAndGas(brand, gas);
+    public List<Car> findByQuery(String brand, String gas, double maxPrice) {
+        return repository.findByQuery(brand, gas, maxPrice);
     }
 
 }
