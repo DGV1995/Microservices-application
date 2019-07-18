@@ -1,0 +1,5 @@
+FROM openjdk:8-alpine
+
+ADD maven/${fileName}.jar ${fileName}.jar
+
+CMD ["java", "-jar", "${fileName}.jar"]

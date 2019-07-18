@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:replace="layout::head"></head>
+<body>
+    <div class="container py-4">
+        <div class="card bg-light">
+            <div class="card-header" th:text="${title}"></div>
+            <div class="card-body">
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-inverse">
+                        <tr>
+                            <th>Brand</th>
+                            <th>Model</th>
+                            <th>Gas</th>
+                            <th>Power (CV)</th>
+                            <th>Price (€)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr th:each="car:${cars}">
+                            <td th:text="${car.brand}"></td>
+                            <td th:text="${car.model}"></td>
+                            <td th:text="${car.gas}"></td>
+                            <td th:text="${car.power}"></td>
+                            <td th:text="${car.price}"></td>
+                        </tr>
+                    </tbody>
+                </table>
+                <span><a th:href="@{/cars}" class="btn btn-danger btn-xs" th:text="'&laquoBack'"></a></span>
+            </div>
+        </div>
+    </div>
+
+    <footer th:replace="layout::footer"></footer>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head th:fragment="head">
+    <meta charset="UTF-8">
+    <title th:text="${title}"></title>
+    <!-- Importamos bootstrap -->
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/css/jquery-ui.min.css}">
+</head>
+<body>
+    <footer th:fragment="footer">
+        <!-- jQuery y Popper.js -->
+        <script th:src="@{/js/jquery-3.3.1.min.js}"></script>
+        <script th:src="@{/js/popper.min.js}"></script>
+
+        <!-- Script de bootstrap -->
+        <script th:src="@{/js/bootstrap.min.js}"></script>
+
+        <!-- jQuery UI -->
+        <script th:src="@{/js/jquery-ui.min.js}"></script>
+    </footer>
+</body>
+</html>

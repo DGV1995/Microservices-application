@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+
+  mysql:
+    image: mysql
+    container_name: mysql
+    ports:
+      - 3306:3306
+    environment:
+      - MYSQL_DATABASE=microservices
+      - MYSQL_ROOT_PASSWORD=1234
+    volumes:
+      - ./data/mysql:/var/lib/mysql/
+    networks:
+      - mynetwork
+
+  cars:
+    image: cars
+    container_name: cars
+    ports:
+      - 8080:8080
+    networks:
+      - mynetwork
+    depends_on:
+      - mysql
+
+  used-cars:
+    image: used-cars
+    container_name: used-cars
+    ports:
+      - 9090:9090
+    networks:
+      - mynetwork
+    depends_on:
+      - mysql
+
+networks:
+  mynetwork:
+
+
