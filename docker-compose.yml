@@ -15,6 +15,7 @@ services:
     networks:
       - mynetwork
 
+
   cars:
     image: cars
     container_name: cars
@@ -22,8 +23,12 @@ services:
       - 8080:8080
     networks:
       - mynetwork
-    depends_on:
-      - mysql
+
+    # Necessary for connecting to MySQL inside a docker container
+    external_links:
+      - mysql:mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
 
   used-cars:
     image: used-cars
@@ -32,8 +37,12 @@ services:
       - 9090:9090
     networks:
       - mynetwork
-    depends_on:
-      - mysql
+
+    # Necessary for connecting to MySQL inside a docker container
+    external_links:
+      - mysql:mysql
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
 
 networks:
   mynetwork:
