@@ -20,8 +20,8 @@ public class UsedCarServiceImpl implements UsedCarService {
 
     @Override
     @Transactional(readOnly = true)
-    public List<UsedCar> findByBrandAndKm(String brand, double km) {
-        return repository.findByBrandAndKm(brand, km);
+    public List<UsedCar> findByQuery(String brand, double km, double price) {
+        return repository.findByQuery(brand, km, price);
     }
 
     @Transactional(readOnly = true)

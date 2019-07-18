@@ -33,8 +33,8 @@ public class UsedCarController {
     }
 
     @GetMapping("/find")
-    public String find(@RequestParam String brand, @RequestParam double km, Model model) {
-        List<UsedCar> cars = service.findByBrandAndKm(brand, km);
+    public String find(@RequestParam String brand, @RequestParam double km, @RequestParam double price, Model model) {
+        List<UsedCar> cars = service.findByQuery(brand, km, price);
 
         model.addAttribute("title", brand.concat(" used cars"));
         model.addAttribute("cars", cars);
