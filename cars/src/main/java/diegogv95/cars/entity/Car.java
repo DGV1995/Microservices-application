@@ -1,29 +1,20 @@
 package diegogv95.cars.entity;
 
 import javax.persistence.*;
-import javax.validation.constraints.NotEmpty;
-import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "cars")
 public class Car {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    @NotEmpty
     private String brand;
-
-    @NotEmpty
     private String model;
-
-    @NotEmpty
     private String gas;
-
-    @NotNull
+    private float consumption;
+    private float acceleration;
     private int power;
-
-    @NotNull
     private double price;
 
     public Long getId() {
@@ -56,6 +47,22 @@ public class Car {
 
     public void setGas(String gas) {
         this.gas = gas;
+    }
+
+    public float getConsumption() {
+        return consumption;
+    }
+
+    public void setConsumption(float consumption) {
+        this.consumption = consumption;
+    }
+
+    public float getAcceleration() {
+        return acceleration;
+    }
+
+    public void setAcceleration(float acceleration) {
+        this.acceleration = acceleration;
     }
 
     public int getPower() {

@@ -11,9 +11,9 @@ services:
       - MYSQL_DATABASE=microservices
       - MYSQL_ROOT_PASSWORD=1234
     volumes:
-      - ./data/mysql:/var/lib/mysql/
+      - ./data/mysql:/data/mysql
     networks:
-      - mynetwork
+      - car-network
 
 
   cars:
@@ -22,13 +22,13 @@ services:
     ports:
       - 8080:8080
     networks:
-      - mynetwork
-
+      - car-network
     # Necessary for connecting to MySQL inside a docker container
     external_links:
       - mysql:mysql
     environment:
       - SPRING_PROFILES_ACTIVE=docker
+
 
   used-cars:
     image: used-cars
@@ -36,8 +36,7 @@ services:
     ports:
       - 9090:9090
     networks:
-      - mynetwork
-
+      - car-network
     # Necessary for connecting to MySQL inside a docker container
     external_links:
       - mysql:mysql
@@ -45,6 +44,6 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
 
 networks:
-  mynetwork:
+  car-network:
 
 

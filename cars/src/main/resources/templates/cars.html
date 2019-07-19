@@ -13,8 +13,7 @@
                             <th>Brand</th>
                             <th>Model</th>
                             <th>Gas</th>
-                            <th>Power (CV)</th>
-                            <th>Price (€)</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
@@ -22,8 +21,7 @@
                             <td th:text="${car.brand}"></td>
                             <td th:text="${car.model}"></td>
                             <td th:text="${car.gas}"></td>
-                            <td th:text="${car.power}"></td>
-                            <td th:text="${car.price}"></td>
+                            <td><a th:href="@{/cars/} + ${car.id}" class="btn btn-primary btn-xs">Details</a></td>
                         </tr>
                     </tbody>
                 </table>
