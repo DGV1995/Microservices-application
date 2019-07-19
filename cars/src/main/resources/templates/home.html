@@ -5,25 +5,19 @@
     <header th:replace="layout::header"></header>
     <div class="container py-4">
         <div class="card bg-light">
-            <div class="card-header" th:text="${title}"></div>
-                <div class="card-body">
-                    <span>
-                        <div>
-                            <img src="../images/new_car.jpg" style="max-width:25%; max-height:25%;"/>
-                        </div>
-                        <div>
-                            <a th:href="@{/cars}" class="column btn btn-primary mx-2">New cars</a>
-                        </div>
-                    </span>
-                    <span>
-                        <div>
-                            <img src="../images/used_car.jpg" style="max-width:25%;max-height:25%;"/>
-                        </div>
-                        <div>
-                            <a href="http://localhost:9090/used-cars" class="column btn btn-primary">Used cars</a>
-                        </div>
-                    </span>
-                </div>
+            <div class="card-header"><strong th:text="${title}"></strong></div>
+            <div class="card-body">
+                <span>
+                    <div class="my-2">
+                        <img src="../images/new_car.jpg" style="max-width:25%; max-height:25%;"/>
+                        <a th:href="@{/cars}" class="btn btn-primary mx-2">New cars</a>
+                    </div>
+                    <div >
+                        <img src="../images/used_car.jpg" style="max-width:25%;max-height:25%;"/>
+                        <a href="http://localhost:9090/used-cars" class="btn btn-primary">Used cars</a>
+                    </div>
+                </span>
+            </div>
         </div>
     </div>
     <footer th:replace="layout::footer"></footer>
