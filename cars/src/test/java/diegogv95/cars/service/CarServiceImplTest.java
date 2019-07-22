@@ -24,8 +24,6 @@ class CarServiceImplTest {
     @InjectMocks
     private CarServiceImpl service;
 
-    private Car car;
-
     @Test
     void findById() {
         // When

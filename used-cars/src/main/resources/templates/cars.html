@@ -12,20 +12,16 @@
                         <tr>
                             <th>Brand</th>
                             <th>Model</th>
-                            <th>Km</th>
-                            <th>Gas</th>
-                            <th>Power (CV)</th>
                             <th>Price (€)</th>
+                            <th></th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr th:each="car:${cars}">
                             <td th:text="${car.brand}"></td>
                             <td th:text="${car.model}"></td>
-                            <td th:text="${car.km}"></td>
-                            <td th:text="${car.gas}"></td>
-                            <td th:text="${car.power}"></td>
                             <td th:text="${car.price}"></td>
+                            <td><a th:href="@{/used-cars/find/} + ${car.id}" class="btn btn-secondary btn-xs">Details</a></td>
                         </tr>
                     </tbody>
                 </table>

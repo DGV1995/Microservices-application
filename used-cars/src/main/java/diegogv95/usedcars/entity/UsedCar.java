@@ -17,6 +17,18 @@ public class UsedCar {
     private int power;
     private double price;
 
+    public UsedCar() {}
+
+    public UsedCar(Long id, String brand, String model, String gas, double km, int power, double price) {
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.gas = gas;
+        this.km = km;
+        this.power = power;
+        this.price = price;
+    }
+
     public Long getId() {
         return id;
     }

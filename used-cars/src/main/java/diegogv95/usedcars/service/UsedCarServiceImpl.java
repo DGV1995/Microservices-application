@@ -24,16 +24,19 @@ public class UsedCarServiceImpl implements UsedCarService {
         return repository.findByQuery(brand, km, price);
     }
 
+    @Override
     @Transactional(readOnly = true)
     public UsedCar findById(Long id) {
         return repository.findById(id).orElse(null);
     }
 
+    @Override
     @Transactional
     public UsedCar save(UsedCar car) {
         return repository.save(car);
     }
 
+    @Override
     @Transactional
     public void deleteById(Long id) {
         repository.deleteById(id);

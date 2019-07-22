@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
@@ -40,6 +41,16 @@ public class UsedCarController {
         model.addAttribute("cars", cars);
 
         return "cars";
+    }
+
+    @GetMapping("/find/{id}")
+    public String findById(@PathVariable Long id, Model model) {
+        UsedCar car = service.findById(id);
+
+        model.addAttribute("title", "Used car with ID: " + car.getId());
+        model.addAttribute("car", car);
+
+        return "car";
     }
 
 }

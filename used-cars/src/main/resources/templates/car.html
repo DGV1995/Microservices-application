@@ -3,29 +3,34 @@
 <head th:replace="layout::head"></head>
 <body>
     <header th:replace="layout::header"></header>
-    <div class="container py-4">
-        <div class="card bg-light">
-            <div class="card-header"><strong th:text="${title}"></strong></div>
+
+    <div class="container">
+        <div class="card">
+            <div class="card-header" th:text="${title}"></div>
             <div class="card-body">
                 <table class="table table-bordered table-striped">
                     <thead class="thead-inverse">
                         <tr>
                             <th>Brand</th>
                             <th>Model</th>
-                            <th>Price</th>
-                            <th></th>
+                            <th>Gas</th>
+                            <th>Km</th>
+                            <th>Power (CV)</th>
+                            <th>Price (€)</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr th:each="car:${cars}">
+                        <tr>
                             <td th:text="${car.brand}"></td>
                             <td th:text="${car.model}"></td>
+                            <td th:text="${car.gas}"></td>
+                            <td th:text="${car.km}"></td>
+                            <td th:text="${car.power}"></td>
                             <td th:text="${car.price}"></td>
-                            <td><a th:href="@{/cars/} + ${car.id}" class="btn btn-primary btn-xs">Details</a></td>
                         </tr>
                     </tbody>
                 </table>
-                <span><a th:href="@{/cars}" class="btn btn-danger btn-xs" th:text="'&laquoBack'"></a></span>
+                <span><a th:href="@{/used-cars}" th:text="'&laquoBack'" class="btn btn-danger btn-xs"></a></span>
             </div>
         </div>
     </div>
