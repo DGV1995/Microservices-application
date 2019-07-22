@@ -2,7 +2,7 @@ version: '3'
 
 services:
 
-  db:
+  mysql:
     image: mysql
     container_name: mysql
     ports:
@@ -20,10 +20,11 @@ services:
     container_name: cars
     ports:
       - 8080:8080
+    restart: always
     networks:
       - car-network
     depends_on:
-      - db
+      - mysql
     # Necessary for connecting to MySQL inside a docker container
     external_links:
       - mysql:mysql
@@ -31,16 +32,16 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
 
 
-
   used-cars:
     image: used-cars
     container_name: used-cars
     ports:
       - 9090:9090
+    restart: always
     networks:
       - car-network
     depends_on:
-      - db
+      - mysql
     # Necessary for connecting to MySQL inside a docker container
     external_links:
       - mysql:mysql
