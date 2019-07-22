@@ -17,6 +17,19 @@ public class Car {
     private int power;
     private double price;
 
+    public Car() {}
+
+    public Car(Long id, String brand, String model, String gas, float consumption, float acceleration, int power, double price) {
+        this.id = id;
+        this.brand = brand;
+        this.model = model;
+        this.gas = gas;
+        this.consumption = consumption;
+        this.acceleration = acceleration;
+        this.power = power;
+        this.price = price;
+    }
+
     public Long getId() {
         return id;
     }

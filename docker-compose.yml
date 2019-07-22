@@ -23,8 +23,6 @@ services:
     restart: always
     networks:
       - car-network
-    depends_on:
-      - mysql
     # Necessary for connecting to MySQL inside a docker container
     external_links:
       - mysql:mysql
@@ -40,8 +38,6 @@ services:
     restart: always
     networks:
       - car-network
-    depends_on:
-      - mysql
     # Necessary for connecting to MySQL inside a docker container
     external_links:
       - mysql:mysql
